@@ -52,5 +52,30 @@ class TriangleChecker:
 
 
 if __name__ == "__main__":
+    # 1) Можно построить
     triangle = TriangleChecker(60, 30, 80)
     triangle.is_triangle()
+    # 2) Нельзя построить
+    triangle = TriangleChecker(10, 90, 80)
+    triangle.is_triangle()
+    # 3) Отрицательные числа
+    triangle = TriangleChecker(60, -30, 80)
+    triangle.is_triangle()
+    # 4) Не правильный тип данных
+    triangle = TriangleChecker(60, "Hello", 80)
+    triangle.is_triangle()
+
+# OUTPUT
+"""
+1) Ура, можно построить треугольник!
+2) Жаль, но из этого треугольник не сделать
+3) С отрицательными числами ничего не выйдет!
+4) 
+    Traceback (most recent call last):
+    File "/home/server/Documents/Two_Tasks/Task-2/main.py", line 65, in <module>
+        triangle = TriangleChecker(60, "Hello", 80)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/server/Documents/Two_Tasks/Task-2/main.py", line 24, in __init__
+        raise TypeError("Нужно вводить только числа!")
+    TypeError: Нужно вводить только числа!
+"""
