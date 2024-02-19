@@ -15,7 +15,12 @@ class TriangleChecker:
         self.__first_rib = first_value
         self.__second_rib = second_value
         self.__third_rib = third_value
-    
+
+    def check(self, res, max):
+        if res > max:
+            print("Ура, можно построить треугольник!")
+        else:
+            print("Жаль, но из этого треугольник не сделать")
 
     def is_triangle(self):
         if (
@@ -28,24 +33,15 @@ class TriangleChecker:
                 match max_rib:
                     case self.__first_rib:
                         res = self.__second_rib + self.__third_rib
-                        if res > max_rib:
-                            print("Ура, можно построить треугольник!")
-                        else:
-                            print("Жаль, но из этого треугольник не сделать")
+                        self.check(res, max_rib)
 
                     case self.__second_rib:
                         res = self.__first_rib + self.__third_rib
-                        if res > max_rib:
-                            print("Ура, можно построить треугольник!")
-                        else:
-                            print("Жаль, но из этого треугольник не сделать")
+                        self.check(res, max_rib)
 
                     case self.__third_rib:
                         res = self.__first_rib + self.__second_rib
-                        if res > max_rib:
-                            print("Ура, можно построить треугольник!")
-                        else:
-                            print("Жаль, но из этого треугольник не сделать")
+                        self.check(res, max_rib)
             else:
                 print("С отрицательными числами ничего не выйдет!")
         else:
