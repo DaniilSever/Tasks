@@ -14,6 +14,13 @@
 
 from lib.Nikola import Nikola
 
-my = Nikola('Николай', 30)
-my.__second_name = 'Дима'
+
+def set_second_name(self, name: str):
+    self.second_name = name
+
+
+my = Nikola("Николай", 30)
+my.set_second_name = set_second_name.__get__(my)
+my.set_second_name("Дима")
+my.__second_name = "Дима"
 print(my.__dict__)
