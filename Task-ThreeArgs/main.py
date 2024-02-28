@@ -9,3 +9,5 @@ def three_args(value_1: any = None, value_2: any = None, value_3: any = None):
             print(f"var2 = {value_2}", end=' ')
         if value_3:
             print(f"var3 = {value_3}")
+
+three_args(value_1=1, value_2=True, value_3='b') 
