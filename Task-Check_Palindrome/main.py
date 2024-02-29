@@ -1,4 +1,4 @@
-def check_palindrome(word: str) -> str:
+def check_palindrome(word: str) -> bool:
     tmp, revers_tmp = [], []
     for i in word:
         tmp.append(i)
@@ -13,9 +13,9 @@ def check_palindrome(word: str) -> str:
     revers_tmp = tmp[::-1]
 
     if revers_tmp == tmp:
-        return "Строка является полиндромом"
+        return True
     else:
-        return "Строка не является полиндромом"
+        return False
 
 
 print(check_palindrome("Яд Ефрему, а умер Федя"))
