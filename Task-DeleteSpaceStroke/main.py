@@ -1,4 +1,4 @@
-def del_space_stroke(stroke: str):
+def del_space_stroke(stroke: str) -> str:
     tmp = []
     for word in stroke:
         tmp.append(word)

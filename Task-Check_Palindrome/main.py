@@ -10,7 +10,7 @@ def check_palindrome(word: str) -> str:
         tmp.remove(",")
 
     tmp = [i.lower() for i in tmp]
-    revers_tmp = [i for i in tmp[::-1]]
+    revers_tmp = tmp[::-1]
 
     if revers_tmp == tmp:
         return "Строка является полиндромом"
