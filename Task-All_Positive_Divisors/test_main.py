@@ -3,9 +3,11 @@ from main import all_divisors
 
 set_values = [23436, 190187200, 380457890232]
 
+
 def test_all_divisors_return_list():
     for value in set_values:
         assert type(all_divisors(value)) == list
+
 
 @pytest.mark.parametrize("values", set_values)
 def test_all_divisors_check_divisors(values):
