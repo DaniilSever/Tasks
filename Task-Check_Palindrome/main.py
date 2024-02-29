@@ -1,21 +1,12 @@
 def check_palindrome(word: str) -> bool:
-    tmp, revers_tmp = [], []
-    for i in word:
-        tmp.append(i)
+    remove_symbol = ' ,!?.'
+    for symbol in remove_symbol:
+        word = word.replace(symbol, "")
 
-    while " " in tmp:
-        tmp.remove(" ")
-
-    while "," in tmp:
-        tmp.remove(",")
-
-    tmp = [i.lower() for i in tmp]
-    revers_tmp = tmp[::-1]
-
-    if revers_tmp == tmp:
+    if word[::-1] == word:
         return True
     else:
         return False
 
 
-print(check_palindrome("Яд Ефрему, а умер Федя"))
+print(check_palindrome("яд ефрему, а умер федя"))

@@ -1,12 +1,5 @@
 def del_space_stroke(stroke: str) -> str:
-    tmp = []
-    for word in stroke:
-        tmp.append(word)
-
-    while " " in tmp:
-        tmp.remove(" ")
-
-    return "".join(str(element) for element in tmp)
+    return stroke.replace(' ', "")
 
 
 print(del_space_stroke(" Hello World !  "))
