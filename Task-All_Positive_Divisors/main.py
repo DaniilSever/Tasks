@@ -1,16 +1,24 @@
 from time import perf_counter
-from numba import njit, prange
+from math import sqrt
 
-@njit(fastmath=True, parallel=True)
-def all_divisors(value: int) -> list: 
-    res = []
-    for i in prange(1, value+1):
+def all_divisors(value: int) -> list:
+    res = [1, value]
+    for i in range(2, int(sqrt(value))+1):
         if not value % i:
+            res.append(int(value / i))
             res.append(i)
+
     return sorted(res)
 
-set_values = [23436, 190187200, 380457890232]
+def main():
+    set_values = [23436, 190187200, 380457890232]
 
-for value in set_values:
-    result = all_divisors(value)
-    print(result)
+    for i in set_values:
+        result = all_divisors(i)
+        print(result)
+
+if __name__ == "__main__":
+    start = perf_counter()
+    main()
+    end = perf_counter()
+    print("\n",end - start)
